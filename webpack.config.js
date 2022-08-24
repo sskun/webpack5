@@ -4,20 +4,22 @@
  * @Author: Yukun
  * @Date: 2022-07-24 14:58:14
  * @LastEditors: Yukun
- * @LastEditTime: 2022-07-30 17:39:48
+ * @LastEditTime: 2022-08-24 16:45:57
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const libraryList = ['amd', 'cjs', 'iife', 'umd'];
 module.exports = {
   entry: {
-    main: './src/main.js',
+    index: './src/index.js',
   }, //入口
   output: {
-    filename: '[name][contenthash:8].js',
+    // filename: '[name][contenthash:8].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    chunkFilename: '[name][contenthash:8].umd.js',
-    libraryTarget: 'umd', // 支持amd cmd 引入方式
+    chunkFilename: '[name].umd.js',
+    libraryTarget: 'umd', // 支持amd cmd引入方式
+    umdNamedDefine: true,
   },
   // 使用loader loader就是处理和编辑各种文件的能力
   module: {
