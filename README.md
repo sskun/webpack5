@@ -1,2 +1,3 @@
 # webpack5
-webpack+babel所有配置
+webpack5配置记录
+webpack生态插件test
